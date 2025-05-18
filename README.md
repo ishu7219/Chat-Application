@@ -65,13 +65,7 @@ Make sure server.js is running at:
 ws://localhost:8080
 ```
 
----
 
-## 😊 Emoji Picker
-
-Powered by [@joeattardi/emoji-button](https://github.com/joeattardi/emoji-button).
-
----
 
 ## 🔐 Username Rules
 
@@ -91,10 +85,6 @@ Powered by [@joeattardi/emoji-button](https://github.com/joeattardi/emoji-button
 
 ---
 
-## 📄 License
 
-MIT License. Free for personal and academic use.
-
----
 
 Built with ❤️ using WebSockets.
