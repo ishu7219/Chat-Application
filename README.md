@@ -36,7 +36,7 @@ A modern real-time chat application built using **HTML, CSS, JavaScript (fronten
 ### 1. Clone the repo or download it
 
 ```bash
-https://github.com/yourusername/chat-app.git
+https://github.com//chat-app.git
 ```
 
 ### 2. Install dependencies (WebSocket only)
