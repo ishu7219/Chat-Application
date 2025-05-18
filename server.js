@@ -1,9 +1,14 @@
-// server.js
 const WebSocket = require('ws');
 const http = require('http');
 
-const PORT = 8080;
-const server = http.createServer();
+// Use the port provided by Render, or default to 8080 locally
+const PORT = process.env.PORT || 8080;
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('WebSocket server is running\n');
+});
+
 const wss = new WebSocket.Server({ server });
 
 let rooms = {}; // { roomName: Set of clients }
@@ -110,6 +115,7 @@ function leaveCurrentRoom(ws) {
   }
 }
 
+// Start the server
 server.listen(PORT, () => {
   console.log(`WebSocket server running at ws://localhost:${PORT}`);
 });
