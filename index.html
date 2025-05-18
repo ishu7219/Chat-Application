@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat App</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.4/dist/index.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <aside class="sidebar">
+      <div class="rooms">
+        <div class="header">Rooms</div>
+        <ul id="room-list" role="listbox" tabindex="0"></ul>
+        <div class="create-room">
+          <input type="text" id="new-room-name" placeholder="New room name" aria-label="New room name" />
+          <button id="btn-create-room" aria-label="Create new room">+</button>
+        </div>
+      </div>
+      <div class="users-panel">
+        <div class="header">Users</div>
+        <ul id="user-list"></ul>
+      </div>
+    </aside>
+
+    <main class="chat-container">
+      <header class="chat-header">
+        <div id="room-title" aria-live="polite">Select or create a room</div>
+        <div class="user-info">User: <strong id="username-display"></strong></div>
+      </header>
+
+      <div id="messages" class="messages" role="log" aria-live="polite" tabindex="0"></div>
+
+      <form id="input-area" autocomplete="off" spellcheck="false">
+        <input type="file" id="file-input" style="display: none;" />
+        <textarea id="message-input" rows="1" placeholder="Type a message..." aria-label="Message input"></textarea>
+        <button type="button" id="emoji-btn" title="Emoji">😊</button>
+        <button type="button" id="file-btn" title="Attach File">📎</button>
+        <button type="submit" id="send-btn" disabled>Send</button>
+      </form>
+    </main>
+  </div>
+
+  <!-- Username Modal -->
+  <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="modal-content">
+      <h2 id="modal-title">Enter your username</h2>
+      <input type="text" id="username-input" autocomplete="off" placeholder="Username" aria-label="Username" />
+      <button id="username-submit">Join Chat</button>
+      <p id="username-error" class="error-message" aria-live="assertive" aria-atomic="true"></p>
+    </div>
+  </div>
+
+  <script>
+    // Link the 📎 button to open file picker
+    document.addEventListener('DOMContentLoaded', () => {
+      const fileBtn = document.getElementById('file-btn');
+      const fileInput = document.getElementById('file-input');
+      if (fileBtn && fileInput) {
+        fileBtn.addEventListener('click', () => fileInput.click());
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
