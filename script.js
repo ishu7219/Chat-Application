@@ -5,6 +5,7 @@
   const usernameSubmit = document.getElementById('username-submit');
   const usernameError = document.getElementById('username-error');
   const usernameDisplay = document.getElementById('username-display');
+  const socket = new WebSocket("wss://chat-application-1-k8ef.onrender.com");
 
   const roomList = document.getElementById('room-list');
   const userList = document.getElementById('user-list');
